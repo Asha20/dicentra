@@ -20,9 +20,22 @@ let getLocation = (function() {
     });
   }
 
+
+  function handleError(code) {
+    switch(code) {
+      case "GEOLOCATION_FAILED":
+        $("#geolocation-failed").classList.remove("hidden");
+        break;
+      case "GEOLOCATION_UNSUPPORTED":
+        $("#geolocation-unsupported").classList.remove("hidden");
+        break;
+    }
+  }
+
+
   $("#search").addEventListener("click", function() {
     getLocation()
     .then(console.log)
-    .catch(console.log);
+    .catch(handleError);
   })
 })();

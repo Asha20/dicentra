@@ -8,9 +8,12 @@ html {
   box-sizing: inherit; }
 
 body {
-  padding: 10px;
+  padding: 20px;
   color: #a34eca;
   font-family: "Roboto", Arial, sans-serif; }
+
+.hidden {
+  display: none; }
 
 /*================*\
   Text
@@ -18,7 +21,7 @@ body {
 .heading {
   display: inline-block;
   padding: 5px 10px;
-  margin-left: -10px;
+  margin-left: -20px;
   background: #a34eca;
   color: white; }
 

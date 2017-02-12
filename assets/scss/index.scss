@@ -16,14 +16,21 @@ html {
   box-sizing: border-box;
 }
 
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+
 body {
-  padding: 10px;
+  padding: 20px;
   color: $color-primary;
   font-family: "Roboto", Arial, sans-serif;
+}
+
+
+.hidden {
+  display: none;
 }
 
 
@@ -37,7 +44,7 @@ body {
 .heading {
   display: inline-block;
   padding: 5px 10px;
-  margin-left: -10px;
+  margin-left: -20px;
 
   background: $color-primary;
   color: white;
