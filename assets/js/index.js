@@ -1,4 +1,4 @@
-let getLocation = (function() {
+const getLocation = (function() {
   const $ = document.querySelector.bind(document);
 
   function getLocation() {
@@ -21,6 +21,12 @@ let getLocation = (function() {
   }
 
 
+  function showResults(coords) {
+    const {lat, lng} = coords;
+    window.location.href = `./results.html?lat=${lat}&lng=${lng}`;
+  }
+
+
   function handleError(code) {
     switch(code) {
       case "GEOLOCATION_FAILED":
@@ -35,7 +41,7 @@ let getLocation = (function() {
 
   $("#search").addEventListener("click", function() {
     getLocation()
-    .then(console.log)
+    .then(showResults)
     .catch(handleError);
   })
 })();

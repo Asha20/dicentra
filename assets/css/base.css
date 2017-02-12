@@ -1,71 +1,46 @@
-//================\\
-//  Colors        \\
-//================\\
-
-$color-primary: #a34eca;
-
-
-
-
-
 /*================*\
   Globals
 \*================*/
-
 html {
-  box-sizing: border-box;
-}
-
+  box-sizing: border-box; }
 
 *, *:before, *:after {
-  box-sizing: inherit;
-}
-
+  box-sizing: inherit; }
 
 body {
   padding: 20px;
-  color: $color-primary;
-  font-family: "Roboto", Arial, sans-serif;
-}
-
+  color: #a34eca;
+  font-family: "Roboto", Arial, sans-serif; }
 
 .hidden {
-  display: none;
-}
-
-
-
-
+  display: none; }
 
 /*================*\
   Text
 \*================*/
-
 .heading {
   display: inline-block;
   padding: 5px 10px;
   margin-left: -20px;
-
-  background: $color-primary;
-  color: white;
-}
-
-
-
-
+  background: #a34eca;
+  color: white; }
 
 /*================*\
   Button
 \*================*/
-
 .button {
   display: block;
   margin: 0 auto;
   padding: 5px;
-
-  background: $color-primary;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  background: #a34eca;
   color: white;
   font-size: 1.5em;
-  border: 2px solid $color-primary;
-  border-radius: 5px;
-}
+  border: 2px solid #a34eca;
+  border-radius: 5px; }
+
+/*================*\
+  Card
+\*================*/
+
+/*# sourceMappingURL=base.css.map */
