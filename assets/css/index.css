@@ -1,0 +1,38 @@
+/*================*\
+  Globals
+\*================*/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  padding: 10px;
+  color: #a34eca;
+  font-family: "Roboto", Arial, sans-serif; }
+
+/*================*\
+  Text
+\*================*/
+.heading {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-left: -10px;
+  background: #a34eca;
+  color: white; }
+
+/*================*\
+  Button
+\*================*/
+.button {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+  background: #a34eca;
+  color: white;
+  font-size: 1.5em;
+  border: 2px solid #a34eca;
+  border-radius: 5px; }
+
+/*# sourceMappingURL=index.css.map */
