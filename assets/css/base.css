@@ -9,8 +9,12 @@ html {
 
 body {
   padding: 20px;
+  background: #e6e6e6;
   color: #a34eca;
   font-family: "Roboto", Arial, sans-serif; }
+
+.block {
+  display: block; }
 
 .hidden {
   display: none; }
@@ -24,6 +28,12 @@ body {
   margin-left: -20px;
   background: #a34eca;
   color: white; }
+
+.bold {
+  font-weight: bold; }
+
+.italic {
+  font-style: italic; }
 
 /*================*\
   Button
@@ -42,5 +52,11 @@ body {
 /*================*\
   Card
 \*================*/
+.card {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  background: white; }
 
 /*# sourceMappingURL=base.css.map */

@@ -12,7 +12,17 @@
   </head>
 
   <body>
-    <section id="places-service"></section>
+    <template id="tmp-card-place">
+      <section class="card">
+        <span class="bold  block  js-place-name"></span>
+        <span class="italic  block  js-place-location"></span>
+      </section>
+    </template>
+    
+
+    <article id="results"></article>
+
+    <article id="places-service"></article>
 
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMvlYlB2utgalKrbFtrjC1LyzxS-z3wHw&libraries=places&callback=getResults.init"></script>

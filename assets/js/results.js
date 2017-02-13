@@ -9,8 +9,22 @@ window.getResults = (function() {
     };
 
     getPlaces(position)
-    .then(console.log)
+    .then(listPlaces)
     .catch(console.log);
+  }
+
+
+  function listPlaces(places) {
+    const template = $("#tmp-card-place");
+    const results = $("#results");
+    places.forEach(function(place) {
+      const card = document.importNode(template.content, true);
+      const placeName = card.querySelector(".js-place-name");
+      const placeLocation = card.querySelector(".js-place-location");
+      placeName.innerHTML = place.name;
+      placeLocation.innerHTML = place.vicinity;
+      results.appendChild(card);
+    })
   }
 
 
