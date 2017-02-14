@@ -1,2 +1,4 @@
-assets/.sass-cache/
-assets/css/base.css.map
+.sass-cache/
+node_modules/
+.babelrc
+dist/css/base.css.map
