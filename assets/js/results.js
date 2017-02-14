@@ -17,14 +17,18 @@ window.getResults = (function() {
   function listPlaces(places) {
     const template = $("#tmp-card-place");
     const results = $("#results");
-    places.forEach(function(place) {
-      const card = document.importNode(template.content, true);
+    for (let i = 0; i < places.length; i++) {
+      const card = document.importNode(template.content.firstElementChild, true);
       const placeName = card.querySelector(".js-place-name");
       const placeLocation = card.querySelector(".js-place-location");
-      placeName.innerHTML = place.name;
-      placeLocation.innerHTML = place.vicinity;
+      placeName.innerHTML = places[i].name;
+      placeLocation.innerHTML = places[i].vicinity;
       results.appendChild(card);
-    })
+
+      card.addEventListener("click", function() {
+        window.location.href = `./place.html?id=${places[i].place_id}`;
+      });
+    }
   }
 
 
