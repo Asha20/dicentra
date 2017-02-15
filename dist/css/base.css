@@ -1,0 +1,73 @@
+/*================*\
+  Globals
+\*================*/
+html {
+  box-sizing: border-box; }
+
+body {
+  padding: 20px;
+  background: #e6e6e6;
+  color: #a34eca;
+  font-family: "Roboto", Arial, sans-serif; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+a {
+  color: #a34eca; }
+
+.center {
+  display: block;
+  margin: 0 auto; }
+
+.block {
+  display: block; }
+
+.hidden {
+  display: none; }
+
+/*================*\
+  Text
+\*================*/
+.heading {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-left: -20px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  background: #a34eca;
+  color: white; }
+
+.text-center {
+  text-align: center; }
+
+.bold {
+  font-weight: bold; }
+
+.italic {
+  font-style: italic; }
+
+/*================*\
+  Button
+\*================*/
+.button {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  background: #a34eca;
+  color: white;
+  font-size: 1.5em;
+  border: 2px solid #a34eca;
+  border-radius: 5px; }
+
+/*================*\
+  Card
+\*================*/
+.card {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.6);
+  background: white; }
+
+/*# sourceMappingURL=base.css.map */
