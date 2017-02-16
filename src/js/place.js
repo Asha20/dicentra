@@ -67,15 +67,20 @@ const getPlaceDetails = (function() {
     const term = document.createElement("dt");
     const description = document.createElement("dd");
     term.innerHTML = info.name;
-    description.innerHTML = info.value;
+    if (info.name === "Website") {
+      const websiteLink = document.createElement("a");
+      websiteLink.href = websiteLink.innerHTML = info.value;
+      description.appendChild(websiteLink);
+    } else {
+      description.innerHTML = info.value;
+    }
     infoWrapper.appendChild(term);
     infoWrapper.appendChild(description);
     $("#place-info").appendChild(infoWrapper);
   }
 
 
-  function displayRating(rating) {
-    // Stars
+  function makeStarRating(rating) {
     const ratingStars = document.createElement("section");
     ratingStars.className = "rating__stars";
 
@@ -91,7 +96,12 @@ const getPlaceDetails = (function() {
       ratingStars.appendChild(starWrapper);
     }
 
-    $("#rating").appendChild(ratingStars);
+    return ratingStars;
+  }
+
+
+  function displayRating(rating) {
+    $("#rating").appendChild(makeStarRating(rating));
 
     // Numerical rating
     const ratingNumber = document.createElement("section");
