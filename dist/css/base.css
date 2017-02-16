@@ -46,6 +46,20 @@ a {
 .italic {
   font-style: italic; }
 
+dt, dd {
+  display: inline-block; }
+
+dt {
+  font-weight: bold;
+  margin-right: 5px; }
+
+dt::after {
+  content: ":"; }
+
+dd {
+  margin-left: 0px;
+  margin-bottom: 10px; }
+
 /*================*\
   Button
 \*================*/
