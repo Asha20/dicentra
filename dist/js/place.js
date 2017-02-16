@@ -70,6 +70,36 @@ var getPlaceDetails = function () {
     $("#place-info").appendChild(infoWrapper);
   }
 
+  function displayRating(rating) {
+    // Stars
+    var ratingStars = document.createElement("section");
+    ratingStars.className = "rating__stars";
+
+    for (var i = 0; i < 5; i++) {
+      var starWrapper = document.createElement("div");
+      starWrapper.className = "star-wrapper";
+      var star = document.createElement("img");
+      star.className = "star";
+      star.src = i < Math.round(rating) ? "./dist/img/star.png" : "./dist/img/star-missing.png";
+
+      starWrapper.appendChild(star);
+      ratingStars.appendChild(starWrapper);
+    }
+
+    $("#rating").appendChild(ratingStars);
+
+    // Numerical rating
+    var ratingNumber = document.createElement("section");
+    ratingNumber.className = "rating__number";
+    var ratingElement = document.createElement("span");
+    ratingElement.className = "rating--numerical  block  text-center";
+    ratingElement.innerHTML = rating + "/5";
+
+    ratingNumber.appendChild(ratingElement);
+
+    $("#rating").appendChild(ratingNumber);
+  }
+
   function displayData(place) {
     console.log(place);
     $("#place-name").innerHTML = place.name;
@@ -115,6 +145,10 @@ var getPlaceDetails = function () {
           throw _iteratorError;
         }
       }
+    }
+
+    if (place.rating) {
+      displayRating(place.rating);
     }
   }
 
