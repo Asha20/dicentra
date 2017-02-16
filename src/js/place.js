@@ -117,6 +117,28 @@ const getPlaceDetails = (function() {
   }
 
 
+  function displayReviews(reviews) {
+    for (let i = 0; i < Math.min(reviews.length, 3); i++) {
+      const review = document.importNode(
+        $("#tmp-review").content.firstElementChild, true);
+      $("#reviews").appendChild(review);
+
+      const userPhoto = review.querySelector(".review__user-photo");
+      userPhoto.src = "http://" + reviews[i].profile_photo_url;
+
+      const userName = review.querySelector(".review__user-name");
+      userName.href = reviews[i].author_url;
+      userName.innerHTML = reviews[i].author_name;
+
+      const rating = makeStarRating(reviews[i].rating);
+      const reviewContent = review.querySelector(".review__content");
+      const reviewText = review.querySelector(".review__text");
+      reviewContent.insertBefore(rating, reviewText);
+      reviewText.innerHTML = reviews[i].text;
+    }
+  }
+
+
   function displayData(place) {
     console.log(place);
     $("#place-name").innerHTML = place.name;
@@ -150,6 +172,10 @@ const getPlaceDetails = (function() {
 
     if (place.rating) {
       displayRating(place.rating);
+    }
+
+    if (place.reviews && place.reviews[0]) {
+      displayReviews(place.reviews);
     }
   }
 

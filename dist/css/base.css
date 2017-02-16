@@ -98,10 +98,31 @@ a {
   width: 100%; }
 
 .rating--numerical {
-  font-size: 2em; }
+  font-size: 2em;
+  margin-bottom: 20px; }
 
 .rating--numerical:before {
   content: "Rating: ";
   font-weight: bold; }
+
+/*================*\
+  Review
+\*================*/
+.review {
+  display: flex;
+  justify-content: space-between; }
+
+.review__info {
+  width: 25%; }
+
+.review__user-photo {
+  width: 100%;
+  border-radius: 100%; }
+
+.review__user-name {
+  font-size: 0.8em; }
+
+.review__content {
+  width: 70%; }
 
 /*# sourceMappingURL=base.css.map */

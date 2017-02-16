@@ -109,6 +109,26 @@ var getPlaceDetails = function () {
     $("#rating").appendChild(ratingNumber);
   }
 
+  function displayReviews(reviews) {
+    for (var i = 0; i < Math.min(reviews.length, 3); i++) {
+      var review = document.importNode($("#tmp-review").content.firstElementChild, true);
+      $("#reviews").appendChild(review);
+
+      var userPhoto = review.querySelector(".review__user-photo");
+      userPhoto.src = "http://" + reviews[i].profile_photo_url;
+
+      var userName = review.querySelector(".review__user-name");
+      userName.href = reviews[i].author_url;
+      userName.innerHTML = reviews[i].author_name;
+
+      var rating = makeStarRating(reviews[i].rating);
+      var reviewContent = review.querySelector(".review__content");
+      var reviewText = review.querySelector(".review__text");
+      reviewContent.insertBefore(rating, reviewText);
+      reviewText.innerHTML = reviews[i].text;
+    }
+  }
+
   function displayData(place) {
     console.log(place);
     $("#place-name").innerHTML = place.name;
@@ -158,6 +178,10 @@ var getPlaceDetails = function () {
 
     if (place.rating) {
       displayRating(place.rating);
+    }
+
+    if (place.reviews && place.reviews[0]) {
+      displayReviews(place.reviews);
     }
   }
 
