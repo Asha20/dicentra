@@ -10,7 +10,7 @@ window.getResults = function () {
       lng: +uri.query(true).lng
     };
 
-    getPlaces(position).then(listPlaces).catch(console.log);
+    getPlaces(position).then(listPlaces).catch(handleError);
   }
 
   function listPlaces(places) {
@@ -52,6 +52,14 @@ window.getResults = function () {
         }
       });
     });
+  }
+
+  function handleError(code) {
+    switch (code) {
+      case "ZERO_RESULTS":
+        $("#zero-results").classList.remove("hidden");
+        break;
+    }
   }
 
   return {

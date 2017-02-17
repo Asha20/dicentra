@@ -130,7 +130,7 @@ const getPlaceDetails = (function() {
       userPhoto.onerror = function() {
         userPhoto.src = "./dist/img/user-profile.png";
       }
-      userPhoto.src = "http://" + reviews[i].profile_photo_url;
+      userPhoto.src = "https://" + reviews[i].profile_photo_url;
 
       const userName = review.querySelector(".review__user-name");
       userName.href = reviews[i].author_url;
@@ -149,7 +149,6 @@ const getPlaceDetails = (function() {
 
 
   function displayData(place) {
-    console.log(place);
     $("#place-name").innerHTML = place.name;
 
     if (place.photos && place.photos[0]) {

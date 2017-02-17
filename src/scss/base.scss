@@ -75,6 +75,10 @@ body {
   display: inline-block;
   padding: 5px 10px;
   margin-left: -20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   
   @include shadow();
   background: $color-primary;
@@ -94,6 +98,11 @@ body {
 
 .italic {
   font-style: italic;
+}
+
+
+h1, p {
+  color: $color-secondary;
 }
 
 
@@ -133,10 +142,17 @@ a {
 
 .button {
   display: block;
+  max-width: 80%;
   margin: 0 auto;
   padding: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   
   @include shadow();
+  text-decoration: none;
+  text-align: center;
   background: $color-primary;
   color: white;
   font-size: 1.5em;
@@ -159,6 +175,11 @@ a {
 
   @include shadow();
   background: white;
+}
+
+
+.card p {
+  color: $color-primary;
 }
 
 
