@@ -9,8 +9,8 @@ window.getResults = (function() {
     };
 
     getPlaces(position)
-    .then(listPlaces)
-    .catch(console.log);
+      .then(listPlaces)
+      .catch(console.log);
   }
 
 

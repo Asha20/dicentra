@@ -41,7 +41,7 @@ const getLocation = (function() {
 
   $("#search").addEventListener("click", function() {
     getLocation()
-    .then(showResults)
-    .catch(handleError);
+      .then(showResults)
+      .catch(handleError);
   })
 })();

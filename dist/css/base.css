@@ -6,7 +6,7 @@ html {
 
 body {
   padding: 20px;
-  background: #e6e6e6;
+  background: #7758cd;
   color: #a34eca;
   font-family: "Roboto", Arial, sans-serif; }
 
@@ -88,7 +88,10 @@ a {
   Rating
 \*================*/
 .rating__stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around; }
 
 .star-wrapper {
@@ -99,7 +102,8 @@ a {
 
 .rating--numerical {
   font-size: 2em;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  color: #ffe55b; }
 
 .rating--numerical:before {
   content: "Rating: ";
@@ -109,7 +113,11 @@ a {
   Review
 \*================*/
 .review {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between; }
 
 .review__info {
@@ -119,7 +127,8 @@ a {
   width: 100%;
   border-radius: 100%; }
 
-.review__user-name {
+.review__relative-time {
+  margin-top: 10px;
   font-size: 0.8em; }
 
 .review__content {

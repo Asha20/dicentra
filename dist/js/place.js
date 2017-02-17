@@ -41,7 +41,10 @@ var getPlaceDetails = function () {
     imageElement.onerror = function () {
       card.classList.add("hidden");
     };
-    imageElement.src = photo.getUrl({ maxWidth: card.offsetWidth });
+
+    // Subtracting 20 from the total card width to account
+    // for padding.
+    imageElement.src = photo.getUrl({ maxWidth: card.offsetWidth - 20 });
 
     if (photo.html_attributions && photo.html_attributions[0]) {
       var attributionLink = photo.html_attributions[0];
@@ -110,22 +113,32 @@ var getPlaceDetails = function () {
   }
 
   function displayReviews(reviews) {
-    for (var i = 0; i < Math.min(reviews.length, 3); i++) {
+    var _loop = function _loop(i) {
       var review = document.importNode($("#tmp-review").content.firstElementChild, true);
       $("#reviews").appendChild(review);
 
       var userPhoto = review.querySelector(".review__user-photo");
+      userPhoto.onerror = function () {
+        userPhoto.src = "./dist/img/user-profile.png";
+      };
       userPhoto.src = "http://" + reviews[i].profile_photo_url;
 
       var userName = review.querySelector(".review__user-name");
       userName.href = reviews[i].author_url;
       userName.innerHTML = reviews[i].author_name;
 
+      var relativeTime = review.querySelector(".review__relative-time");
+      relativeTime.innerHTML = reviews[i].relative_time_description;
+
       var rating = makeStarRating(reviews[i].rating);
       var reviewContent = review.querySelector(".review__content");
       var reviewText = review.querySelector(".review__text");
       reviewContent.insertBefore(rating, reviewText);
       reviewText.innerHTML = reviews[i].text;
+    };
+
+    for (var i = 0; i < Math.min(reviews.length, 3); i++) {
+      _loop(i);
     }
   }
 

@@ -2,7 +2,9 @@
 //  Colors        \\
 //================\\
 
+$color-background: #7758cd;
 $color-primary: #a34eca;
+$color-secondary: #ffe55b;
 
 
 
@@ -36,7 +38,7 @@ html {
 
 body {
   padding: 20px;
-  background: #e6e6e6;
+  background: $color-background;
   color: $color-primary;
   font-family: "Roboto", Arial, sans-serif;
 }
@@ -168,8 +170,11 @@ a {
 \*================*/
 
 .rating__stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 
@@ -186,6 +191,8 @@ a {
 .rating--numerical {
   font-size: 2em;
   margin-bottom: 20px;
+
+  color: $color-secondary;
 }
 
 
@@ -203,8 +210,12 @@ a {
 \*================*/
 
 .review {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack:  justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 
@@ -219,7 +230,8 @@ a {
 }
 
 
-.review__user-name {
+.review__relative-time {
+  margin-top: 10px;
   font-size: 0.8em;
 }
 

@@ -6,8 +6,8 @@ const getPlaceDetails = (function() {
     const placeID = uri.query(true).id;
 
     getPlaceDetails(placeID)
-    .then(displayData)
-    .catch(console.log);
+      .then(displayData)
+      .catch(console.log);
   }
 
 
@@ -43,7 +43,10 @@ const getPlaceDetails = (function() {
     imageElement.onerror = function() {
       card.classList.add("hidden");
     }
-    imageElement.src = photo.getUrl({maxWidth: card.offsetWidth});
+
+    // Subtracting 20 from the total card width to account
+    // for padding.
+    imageElement.src = photo.getUrl({maxWidth: card.offsetWidth - 20});
 
     if (photo.html_attributions && photo.html_attributions[0]) {
       const attributionLink = photo.html_attributions[0];
@@ -124,11 +127,17 @@ const getPlaceDetails = (function() {
       $("#reviews").appendChild(review);
 
       const userPhoto = review.querySelector(".review__user-photo");
+      userPhoto.onerror = function() {
+        userPhoto.src = "./dist/img/user-profile.png";
+      }
       userPhoto.src = "http://" + reviews[i].profile_photo_url;
 
       const userName = review.querySelector(".review__user-name");
       userName.href = reviews[i].author_url;
       userName.innerHTML = reviews[i].author_name;
+
+      const relativeTime = review.querySelector(".review__relative-time");
+      relativeTime.innerHTML = reviews[i].relative_time_description;
 
       const rating = makeStarRating(reviews[i].rating);
       const reviewContent = review.querySelector(".review__content");
