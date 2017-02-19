@@ -112,33 +112,49 @@ var getPlaceDetails = function () {
     $("#rating").appendChild(ratingNumber);
   }
 
-  function displayReviews(reviews) {
-    var _loop = function _loop(i) {
-      var review = document.importNode($("#tmp-review").content.firstElementChild, true);
-      $("#reviews").appendChild(review);
+  function makeReview(review) {
+    var reviewElement = document.importNode($("#tmp-review").content.firstElementChild, true);
 
-      var userPhoto = review.querySelector(".review__user-photo");
-      userPhoto.onerror = function () {
-        userPhoto.src = "./dist/img/user-profile.png";
-      };
-      userPhoto.src = "https://" + reviews[i].profile_photo_url;
-
-      var userName = review.querySelector(".review__user-name");
-      userName.href = reviews[i].author_url;
-      userName.innerHTML = reviews[i].author_name;
-
-      var relativeTime = review.querySelector(".review__relative-time");
-      relativeTime.innerHTML = reviews[i].relative_time_description;
-
-      var rating = makeStarRating(reviews[i].rating);
-      var reviewContent = review.querySelector(".review__content");
-      var reviewText = review.querySelector(".review__text");
-      reviewContent.insertBefore(rating, reviewText);
-      reviewText.innerHTML = reviews[i].text;
+    var $review = reviewElement.querySelector.bind(reviewElement);
+    var userPhoto = $review(".review__user-photo");
+    userPhoto.onerror = function () {
+      userPhoto.src = "./dist/img/user-profile.png";
     };
+    userPhoto.src = "https://" + review.profile_photo_url;
 
+    var userName = $review(".review__user-name");
+    userName.href = review.author_url;
+    userName.innerHTML = review.author_name;
+
+    var relativeTime = $review(".review__relative-time");
+    relativeTime.innerHTML = review.relative_time_description;
+
+    var rating = makeStarRating(review.rating);
+    var reviewContent = $review(".review__content");
+    var reviewText = $review(".review__text");
+    reviewContent.insertBefore(rating, reviewText);
+    reviewText.innerHTML = review.text;
+
+    return reviewElement;
+  }
+
+  function displayReviews(reviews) {
     for (var i = 0; i < Math.min(reviews.length, 3); i++) {
-      _loop(i);
+      $("#reviews").appendChild(makeReview(reviews[i]));
+    }
+
+    if (reviews.length > 3) {
+      var button = document.createElement("button");
+      button.innerHTML = "Show more";
+      button.className = "button";
+      $("#reviews").appendChild(button);
+
+      button.addEventListener("click", function () {
+        for (var _i = 3; _i < reviews.length; _i++) {
+          $("#reviews").appendChild(makeReview(reviews[_i]));
+        }
+        this.parentNode.removeChild(this);
+      });
     }
   }
 
