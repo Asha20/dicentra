@@ -101,7 +101,7 @@ body {
 }
 
 
-h1, p {
+h1, p, a {
   color: $color-secondary;
 }
 
@@ -125,11 +125,6 @@ dt::after {
 dd {
   margin-left: 0px;
   margin-bottom: 10px;
-}
-
-
-a {
-  color: $color-primary;
 }
 
 
@@ -178,7 +173,7 @@ a {
 }
 
 
-.card p {
+.card p, .card a {
   color: $color-primary;
 }
 
