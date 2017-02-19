@@ -12,31 +12,33 @@
   </head>
 
   <body>
-    <article class="introduction">
-      <h1 class="heading">Dicentra</h1>
-      <p>Hungry, but not feeling like going out to eat? Dicentra shows you food delivery places near you!</p>
-      <button class="button" id="search">
-        <span class="block">Search</span>
-        <img src="dist/img/powered-by-google.png" alt="Powered by Google">
-      </button>
-    </article>
+    <div class="page-wrapper  page-wrapper--index">
+      <article class="introduction">
+        <h1 class="heading">Dicentra</h1>
+        <p>Hungry, but not feeling like going out to eat? Dicentra shows you food delivery places near you!</p>
+        <button class="button" id="search">
+          <span class="block">Search</span>
+          <img class="powered-by-google" src="dist/img/powered-by-google.png" alt="Powered by Google">
+        </button>
+      </article>
 
-    <article class="hidden" id="geolocation-failed">
-      <h1>Geolocation failed</h1>
-      <p>Uh oh, Dicentra couldn't find your location. Dicentra needs your location to work; try refreshing the page. When asked to share your location, click "Accept".</p>
-      <p>Also, if you're using a smartphone, make sure you have location turned on.</p>
-    </article>
+      <article class="hidden" id="geolocation-failed">
+        <h1>Geolocation failed</h1>
+        <p>Uh oh, Dicentra couldn't find your location. Dicentra needs your location to work; try refreshing the page. When asked to share your location, click "Accept".</p>
+        <p>Also, if you're using a smartphone, make sure you have location turned on.</p>
+      </article>
 
-    <article class="hidden" id="geolocation-unsupported">
-      <h1>Geolocation unsupported</h1>
-      <p>Uh oh, looks like your browser doesn't support geolocation! Sadly, Dicentra needs to know your location to work properly.</p>
-    </article>
+      <article class="hidden" id="geolocation-unsupported">
+        <h1>Geolocation unsupported</h1>
+        <p>Uh oh, looks like your browser doesn't support geolocation! Sadly, Dicentra needs to know your location to work properly.</p>
+      </article>
 
-    <footer id="privacy-policy">
-      <h1 class="heading">About the app</h1>
-      <p>Dicentra uses te Google Maps API to display food delivery places near you. To make the search, you'll need to submit your location. Your location will not be stored, shared or used for anything malicious. To read more, refer to the <a href="https://www.google.com/policies/privacy/">Google Privacy Policy.</a></p>
-      <p>By using this application, you are bound to <a href="https://www.google.com/intl/en/policies/terms/">Google's Terms of Service.</a></p>
-    </footer>
+      <footer id="privacy-policy">
+        <h1 class="heading">About the app</h1>
+        <p>Dicentra uses te Google Maps API to display food delivery places near you. To make the search, you'll need to submit your location. Your location will not be stored, shared or used for anything malicious. To read more, refer to the <a href="https://www.google.com/policies/privacy/">Google Privacy Policy.</a></p>
+        <p>By using this application, you are bound to <a href="https://www.google.com/intl/en/policies/terms/">Google's Terms of Service.</a></p>
+      </footer>
+    </div>
 
     <script src="dist/js/index.js"></script>
   </body>

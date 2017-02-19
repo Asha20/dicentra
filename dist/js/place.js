@@ -29,7 +29,7 @@ var getPlaceDetails = function () {
   function loadPhoto(photo) {
     var card = document.createElement("section");
     card.className = "card  text-center";
-    $("body").insertBefore(card, $("#place-info-card"));
+    $(".page-wrapper").insertBefore(card, $("#place-info-card"));
 
     var imageElement = document.createElement("img");
     imageElement.className = "center";

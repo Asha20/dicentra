@@ -12,23 +12,31 @@
   </head>
 
   <body>
-    <template id="tmp-card-place">
-      <section class="card">
-        <span class="bold  block  js-place-name"></span>
-        <span class="italic  block  js-place-location"></span>
-      </section>
-    </template>
+    <div class="page-wrapper  page-wrapper--results">
+      <article class="left">
+        <template id="tmp-card-place">
+          <section class="card">
+            <span class="bold  block  js-place-name"></span>
+            <span class="italic  block  js-place-location"></span>
+          </section>
+        </template>
 
-    <article class="hidden" id="zero-results">
-      <h1>Zero results</h1>
-      <p>Uh oh, Dicentra couldn't find any food delivery places near you! Go back to the previous page and try increasing the search radius if you haven't already.</p>
-      <a class="button" href="./index.html">Back</a>
-    </article>
-    
+        <article class="hidden" id="zero-results">
+          <h1>Zero results</h1>
+          <p>Uh oh, Dicentra couldn't find any food delivery places near you! Go back to the previous page and try increasing the search radius if you haven't already.</p>
+          <a class="button" href="./index.html">Back</a>
+        </article>
+        
 
-    <article id="results"></article>
+        <article id="results"></article>
 
-    <article id="places-service"></article>
+        <article id="places-service"></article>
+      </article><!--
+      
+      --><article class="right">
+        <iframe id="iframe-place" class="hidden" frameborder="0"></iframe>
+      </article>
+    </div>
 
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMvlYlB2utgalKrbFtrjC1LyzxS-z3wHw&libraries=places&callback=getResults.init"></script>

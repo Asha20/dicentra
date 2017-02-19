@@ -37,14 +37,26 @@ html {
 
 
 body {
-  padding: 20px;
   background: $color-background;
   color: $color-primary;
   font-family: "Roboto", Arial, sans-serif;
 }
 
+
+.page-wrapper {
+  padding: 20px;
+
+  background: $color-background;
+}
+
+
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+
+.powered-by-google {
+  max-width: 100%;
 }
 
 
@@ -139,6 +151,7 @@ dd {
   display: block;
   max-width: 80%;
   margin: 0 auto;
+  margin-top: 10px;
   padding: 5px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -256,3 +269,44 @@ dd {
   width: 70%;
 }
 
+
+
+
+
+/*================*\
+  Responsiveness
+\*================*/
+
+.page-wrapper {
+  max-width: 540px;
+}
+
+
+@media screen and (min-width: 540px) {
+  .page-wrapper {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .page-wrapper--results {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .left {
+    float: left;
+    /* Leaves a 2% spacing between
+       the left and right side. */
+    width: 48%;
+  }
+
+  .right {
+    float: right;
+    width: 50%;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}

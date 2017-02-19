@@ -12,36 +12,38 @@
   </head>
 
   <body>
-    <template id="tmp-review">
-      <article class="review  card">
-        <section class="review__info">
-          <img class="review__user-photo"alt="Profile Photo">
-          <a class="review__user-name  block  text-center" href="#"></a>
-          <span class="review__relative-time  block  text-center"></span>
-        </section>
+    <div class="page-wrapper  page-wrapper--place">
+      <template id="tmp-review">
+        <article class="review  card">
+          <section class="review__info">
+            <img class="review__user-photo"alt="Profile Photo">
+            <a class="review__user-name  block  text-center" href="#"></a>
+            <span class="review__relative-time  block  text-center"></span>
+          </section>
 
-        <section class="review__content">
-          <p class="review__text"></p>
-        </section>
+          <section class="review__content">
+            <p class="review__text"></p>
+          </section>
+        </article>
+      </template>
+
+
+      <article id="details"></article>
+      <h1 class="heading" id="place-name"></h1>
+
+      <article class="card" id="place-info-card">
+        <dl id="place-info">
+        </dl>
       </article>
-    </template>
 
+      <article id="rating">
+        <!-- Dynamically filled by JS -->
+      </article>
 
-    <article id="details"></article>
-    <h1 class="heading" id="place-name"></h1>
-
-    <article class="card" id="place-info-card">
-      <dl id="place-info">
-      </dl>
-    </article>
-
-    <article id="rating">
-      <!-- Dynamically filled by JS -->
-    </article>
-
-    <article id="reviews">
-      <!-- Dynamically filled by JS -->
-    </article>
+      <article id="reviews">
+        <!-- Dynamically filled by JS -->
+      </article>
+    </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.7/URI.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMvlYlB2utgalKrbFtrjC1LyzxS-z3wHw&libraries=places"></script>
