@@ -291,22 +291,6 @@ dd {
 @media screen and (min-width: 800px) {
   .page-wrapper--results {
     max-width: 100%;
-    width: 100%;
-  }
-
-  .left {
-    float: left;
-    /* Leaves a 2% spacing between
-       the left and right side. */
-    width: 48%;
-  }
-
-  .right {
-    float: right;
-    width: 50%;
-  }
-
-  iframe {
-    width: 100%;
+    width: 70%;
   }
 }
